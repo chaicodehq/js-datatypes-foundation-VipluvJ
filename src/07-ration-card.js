@@ -54,7 +54,11 @@
  */
 export function getFamilyNames(registry) {
   // Your code here
-  if (typeof registry !== "object" || registry === null) {
+  if (
+    typeof registry !== "object" ||
+    registry === null ||
+    Array.isArray(registry)
+  ) {
     return [];
   }
   return Object.keys(registry);
